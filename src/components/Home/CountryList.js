@@ -1,20 +1,33 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { fetchDetail } from '../../redux/data/covid';
+import ListItem from './ListItem';
 
 const CountryList = () => {
   const { countries } = useSelector((state) => state.covidReducer.countries);
   const [filter, setFilter] = useState(false);
   const [text, setText] = useState('');
   const [countryFilter, setCountryFilter] = useState([]);
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const filterData = () => {
     setFilter(!filter);
-    setCountryFilter([{ name: 'Mexico' }]);
+    const query = text.toLowerCase();
+    const filterContry = countries.filter(
+      (item) => item.name.toLowerCase().indexOf(query) >= 0,
+    );
+    setCountryFilter(filterContry);
   };
 
   const textChange = (e) => {
-    console.log(e.target.value);
     setText(e.target.value);
+  };
+
+  const goDetail = (country) => {
+    dispatch(fetchDetail(country));
+    history.push('/detail');
   };
 
   if (!countries) return <></>;
@@ -35,10 +48,18 @@ const CountryList = () => {
         <ul>
           {filter === false
             ? countries.map((contry) => (
-              <ul key={contry.name}>{contry.name}</ul>
+              <ListItem
+                key={contry.name}
+                contry={contry}
+                goDetail={goDetail}
+              />
             ))
             : countryFilter.map((contry) => (
-              <ul key={contry.name}>{contry.name}</ul>
+              <ListItem
+                key={contry.name}
+                contry={contry}
+                goDetail={goDetail}
+              />
             ))}
         </ul>
       </div>

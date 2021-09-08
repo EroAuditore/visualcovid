@@ -8,10 +8,11 @@ const COUNTRY_DATA = 'COUNTRY_DATA';
 const COUNTRY_SUCCESS = 'COUNTRY_SUCCESS';
 const COUNTRY_FAIL = 'COUNTRY_FAIL';
 
-// const FILTER_DATA = 'FILTER_DATA';
-// const CANCEL_FILTER = 'FILTER_DATA';
+const DETAIL_DATA = 'DETAIL_DATA';
+const DETAIL_SUCCESS = 'DETAIL_SUCCESS';
+const DETAIL_FAIL = 'DETAIL_FAIL';
 
-const initialState = { worldData: {}, countries: [], detail: {} };
+const initialState = { worldData: {}, countries: [], country: {} };
 
 const loadData = (payload) => ({
   type: LOAD_DATA,
@@ -43,15 +44,20 @@ const countryFail = (payload) => ({
   payload,
 });
 
-// const filterData = (payload) => ({
-//   type: FILTER_DATA,
-//   payload,
-// });
+const detailData = (payload) => ({
+  type: DETAIL_DATA,
+  payload,
+});
 
-// const cancelFilter = (payload) => ({
-//   type: FILTER_DATA,
-//   payload,
-// });
+const detailSuccess = (payload) => ({
+  type: DETAIL_SUCCESS,
+  payload,
+});
+
+const detailFail = (payload) => ({
+  type: DETAIL_FAIL,
+  payload,
+});
 
 const covidReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -66,6 +72,13 @@ const covidReducer = (state = initialState, action) => {
     case COUNTRY_SUCCESS:
       return { ...state, countries: action.payload };
     case COUNTRY_FAIL:
+      return { ...state };
+
+    case DETAIL_DATA:
+      return { ...state };
+    case DETAIL_SUCCESS:
+      return { ...state, country: action.payload };
+    case DETAIL_FAIL:
       return { ...state };
     default:
       return state;
@@ -102,6 +115,19 @@ const fetchCountry = () => (dispatch) => {
     });
 };
 
+const fetchDetail = (country) => (dispatch) => {
+  dispatch(detailData());
+  axios
+    .get(`${endPoint}countries/${country}`)
+    .then((response) => {
+      if (response.data !== '') {
+        dispatch(detailSuccess(response.data));
+      }
+    })
+    .catch(() => {
+      dispatch(detailFail());
+    });
+};
 export {
   covidReducer,
   loadSuccess,
@@ -109,4 +135,5 @@ export {
   loadData,
   fetchInitialData,
   fetchCountry,
+  fetchDetail,
 };
