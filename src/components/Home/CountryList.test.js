@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 import React from 'react';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
@@ -34,3 +35,4 @@ describe('Test GlobalCard component', () => {
     component.getByText('Mexico');
   });
 });
+/* eslint-enable comma-dangle */

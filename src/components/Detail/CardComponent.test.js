@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 import React from 'react';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
@@ -45,3 +46,4 @@ describe('Test CardComponent component', () => {
     component.getByText(new Date().toDateString());
   });
 });
+/* eslint-disable comma-dangle */
