@@ -24,7 +24,7 @@ const Detail = () => {
         </div>
         <CardComponent country={country} />
       </section>
-      <section>
+      <section className="chart-section">
         <ChartD country={country} />
       </section>
     </>

@@ -205,3 +205,8 @@ h6 {
   top: 250px;
   width: 100%;
 }
+
+.chart-section {
+  display: flex;
+  justify-content: center;
+}
