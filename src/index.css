@@ -4,9 +4,9 @@
   --header-height: 3rem;
 
   /* == Main colors == */
+
   /* --hue-color: 219; */
   --hue-color: 336;
-
   --first-color: hsl(var(--hue-color), 97%, 65%);
   --first-color-second: hsl(var(--hue-color), 58%, 53%);
   --first-color-alt: hsl(var(--hue-color), 57%, 53%);
@@ -21,12 +21,12 @@
 
 #root {
   display: flex;
-
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
 }
+
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
@@ -34,11 +34,13 @@ body {
   color: #fff;
   box-sizing: border-box;
 }
+
 .App-header {
   display: flex;
   justify-content: center;
   background-color: var(--first-color-second);
 }
+
 .covid-logo {
   height: 3rem;
 }
@@ -46,6 +48,7 @@ body {
 .world-logo {
   height: 5rem;
 }
+
 .logoCard {
   display: flex;
   width: 50%;
@@ -110,6 +113,7 @@ h6 {
   height: 33px;
   width: 20%;
 }
+
 .btn-back {
   background-color: transparent;
   border: none;
@@ -132,11 +136,13 @@ h6 {
   align-items: center;
   justify-content: center;
 }
+
 .div-serch form {
   width: 100%;
   display: flex;
   justify-content: center;
 }
+
 .text-search {
   outline: none;
   border: 0;
@@ -163,6 +169,7 @@ h6 {
   align-items: center;
   width: 100%;
 }
+
 .country-list li {
   display: flex;
   width: 100%;
