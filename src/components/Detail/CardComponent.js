@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CountUp from 'react-countup';
+import logo from '../Home/globe-world-icon.png';
 
 const CardComponent = ({ country }) => {
   const { confirmed, deaths, lastUpdate } = country;
@@ -7,11 +9,32 @@ const CardComponent = ({ country }) => {
 
   return (
     <>
-      <div>
-        card
-        <span>{confirmed.value}</span>
-        <span>{deaths.value}</span>
-        <span>{new Date(lastUpdate).toDateString()}</span>
+      <div className="Global-card">
+        <div className="logoCard">
+          <img src={logo} alt="Logo" className="world-logo" />
+        </div>
+        <div className="info-card">
+          <h4>Infected:</h4>
+          <h6>
+            <CountUp
+              start={0}
+              end={confirmed.value}
+              duration={2.75}
+              separator=","
+            />
+          </h6>
+          <h4>Deaths:</h4>
+          <h6>
+            <CountUp
+              start={0}
+              end={deaths.value}
+              duration={2.75}
+              separator=","
+            />
+          </h6>
+          <h4>lastUpdate:</h4>
+          <h6>{new Date(lastUpdate).toDateString()}</h6>
+        </div>
       </div>
     </>
   );

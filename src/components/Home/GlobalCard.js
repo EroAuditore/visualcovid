@@ -34,10 +34,7 @@ const GlobalCard = () => {
             />
           </h6>
           <h4>lastUpdate:</h4>
-          <h6>
-            {new Date(lastUpdate).toDateString()}
-            `
-          </h6>
+          <h6>{new Date(lastUpdate).toDateString()}</h6>
         </div>
       </div>
     </>

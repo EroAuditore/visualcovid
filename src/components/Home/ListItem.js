@@ -6,7 +6,7 @@ const ListItem = ({ contry, goDetail, index }) => {
   return (
     <>
       <li key={contry.name} className={styleRow}>
-        <span>{contry.name}</span>
+        <span className="country-name">{contry.name}</span>
         <button
           type="button"
           className="btn-go"
