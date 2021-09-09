@@ -37,7 +37,7 @@ describe('Test CardComponent component', () => {
   const component = render(
     <Provider store={store}>
       <CardComponent country={data} />
-    </Provider>
+    </Provider>,
   );
 
   // Assert
