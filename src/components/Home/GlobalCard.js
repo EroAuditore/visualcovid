@@ -7,6 +7,7 @@ const GlobalCard = () => {
   const { confirmed, deaths, lastUpdate } = useSelector(
     (state) => state.covidReducer.worldData,
   );
+
   if (!confirmed) return <></>;
   return (
     <>
