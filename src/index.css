@@ -1,13 +1,162 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  --header-height: 3rem;
+
+  /* == Main colors == */
+  /* --hue-color: 219; */
+  --hue-color: 336;
+
+  --first-color: hsl(var(--hue-color), 97%, 65%);
+  --first-color-second: hsl(var(--hue-color), 58%, 53%);
+  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+  --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+  --title-color: hsl(var(--hue-color), 8%, 15%);
+  --text-color: hsl(var(--hue-color), 8%, 45%);
+  --text-color-light: hsl(var(--hue-color), 8%, 65%);
+  --input-color: hsl(var(--hue-color), 70%, 96%);
+  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --container-color: #fff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: var(--first-color);
+  color: #fff;
+  box-sizing: border-box;
+}
+.App-header {
+  display: flex;
+  justify-content: center;
+  background-color: var(--first-color-second);
+}
+.covid-logo {
+  height: 3rem;
+}
+
+.world-logo {
+  height: 5rem;
+}
+.logoCard {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--first-color);
+}
+
+.header h4,
+h6 {
+  margin: 0.5rem;
+}
+
+.Global-card {
+  display: flex;
+}
+
+.list-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-section h4 {
+  background-color: var(--first-color-second);
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.btn {
+  background-color: var(--first-color-second);
+  border: none;
+  color: white;
+  padding: 3px 9px;
+  font-size: 16px;
+  cursor: pointer;
+  height: 33px;
+  width: 20%;
+}
+
+.btn-go {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 3px 9px;
+  font-size: 16px;
+  cursor: pointer;
+  height: 33px;
+  width: 20%;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: var(--first-color-lighter);
+}
+
+.div-serch {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.div-serch form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.text-search {
+  outline: none;
+  border: 0;
+  width: 80%;
+  height: 30px;
+}
+
+.country-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.country-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  width: 100%;
+}
+.country-list li {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.bg-primary {
+  background-color: var(--first-color-second);
+}
+
+.bg-secundary {
+  background-color: var(--first-color);
 }

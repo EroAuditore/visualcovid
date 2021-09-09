@@ -4,15 +4,13 @@ import CountryList from './CountryList';
 
 const Home = () => (
   <>
-    <div className="container">
-      <section>
-        <GlobalCard />
-      </section>
-      <section>
-        <h2> countries list</h2>
-        <CountryList />
-      </section>
-    </div>
+    <section className="header">
+      <GlobalCard />
+    </section>
+    <section className="list-section">
+      <h4> Select contry</h4>
+      <CountryList />
+    </section>
   </>
 );
 

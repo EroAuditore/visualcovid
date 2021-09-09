@@ -12,7 +12,12 @@ const DETAIL_DATA = 'DETAIL_DATA';
 const DETAIL_SUCCESS = 'DETAIL_SUCCESS';
 const DETAIL_FAIL = 'DETAIL_FAIL';
 
-const initialState = { worldData: {}, countries: [], country: {} };
+const initialState = {
+  worldData: {},
+  countries: [],
+  country: {},
+  countryName: '',
+};
 
 const loadData = (payload) => ({
   type: LOAD_DATA,
@@ -75,7 +80,7 @@ const covidReducer = (state = initialState, action) => {
       return { ...state };
 
     case DETAIL_DATA:
-      return { ...state };
+      return { ...state, countryName: action.payload };
     case DETAIL_SUCCESS:
       return { ...state, country: action.payload };
     case DETAIL_FAIL:
@@ -116,7 +121,7 @@ const fetchCountry = () => (dispatch) => {
 };
 
 const fetchDetail = (country) => (dispatch) => {
-  dispatch(detailData());
+  dispatch(detailData(country));
   axios
     .get(`${endPoint}countries/${country}`)
     .then((response) => {

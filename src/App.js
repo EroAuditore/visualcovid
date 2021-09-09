@@ -14,11 +14,13 @@ function App() {
   }, []);
   return (
     <Router>
-      <NavBar />
-      <Switch>
-        <Route path="/detail" component={Detail} />
-        <Route path="/" exact component={Home} />
-      </Switch>
+      <div className="container">
+        <NavBar />
+        <Switch>
+          <Route path="/detail" component={Detail} />
+          <Route path="/" exact component={Home} />
+        </Switch>
+      </div>
     </Router>
   );
 }

@@ -34,31 +34,38 @@ const CountryList = () => {
 
   return (
     <>
-      <div>
-        <input
-          type="text"
-          id="search"
-          placeholder="Type country"
-          value={text}
-          onChange={textChange}
-        />
-        <input type="button" value="find" onClick={filterData} />
+      <div className="div-serch">
+        <form>
+          <input
+            type="text"
+            id="search"
+            placeholder="Type country"
+            value={text}
+            onChange={textChange}
+            className="text-search"
+          />
+          <button type="button" className="btn" onClick={filterData}>
+            <i className="fa fa-search" />
+          </button>
+        </form>
       </div>
-      <div>
-        <ul>
+      <div className="country-container">
+        <ul className="country-list">
           {filter === false
-            ? countries.map((contry) => (
+            ? countries.map((contry, i) => (
               <ListItem
                 key={contry.name}
                 contry={contry}
                 goDetail={goDetail}
+                index={i}
               />
             ))
-            : countryFilter.map((contry) => (
+            : countryFilter.map((contry, i) => (
               <ListItem
                 key={contry.name}
                 contry={contry}
                 goDetail={goDetail}
+                index={i}
               />
             ))}
         </ul>
