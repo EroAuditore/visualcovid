@@ -26,7 +26,7 @@ describe('Test GlobalCard component', () => {
   const component = render(
     <Provider store={store}>
       <CountryList />
-    </Provider>,
+    </Provider>
   );
 
   // Assert
