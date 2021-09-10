@@ -1,4 +1,3 @@
-/* eslint-disable comma-dangle */
 import React from 'react';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
@@ -27,7 +26,7 @@ describe('Test GlobalCard component', () => {
   const component = render(
     <Provider store={store}>
       <CountryList />
-    </Provider>
+    </Provider>,
   );
 
   // Assert
@@ -35,4 +34,3 @@ describe('Test GlobalCard component', () => {
     component.getByText('Mexico');
   });
 });
-/* eslint-enable comma-dangle */

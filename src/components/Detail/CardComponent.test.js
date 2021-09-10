@@ -1,4 +1,3 @@
-/* eslint-disable comma-dangle */
 import React from 'react';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
@@ -38,7 +37,7 @@ describe('Test CardComponent component', () => {
   const component = render(
     <Provider store={store}>
       <CardComponent country={data} />
-    </Provider>
+    </Provider>,
   );
 
   // Assert
@@ -46,4 +45,3 @@ describe('Test CardComponent component', () => {
     component.getByText(new Date().toDateString());
   });
 });
-/* eslint-disable comma-dangle */
