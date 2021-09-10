@@ -14,6 +14,8 @@
     <a href="https://github.com/eroauditore/visualcovid/issues">Report Bug</a>
     ·
     <a href="https://github.com/eroauditore/visualcovid/issues">Request Feature</a>
+    .
+    <a href="https://www.loom.com/share/d14ae54d37c64611b0304c3c017e5ae2">Video</a>
   </p>
 </p>
 
